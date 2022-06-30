@@ -8,7 +8,7 @@ const Desc = styled.div`
 const Paragraph = styled(motion.p)`
   text-align: ${(p) => p.align};
   text-align-last: ${(p) => (p.align === "justify" ? "center" : p.align)};
-  margin-bottom: 32px;
+  margin-bottom: 16px;
   font-size: 1.2rem;
 
   a {
@@ -26,7 +26,7 @@ const Description = ({ textArr, align = "justify" }) => {
           align={align}
           initial={{ opacity: 0, x: i % 2 === 0 ? 100 : -100 }}
           whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: true, margin: "0px 300px 0px 300px" }}
           transition={{
             ease: "easeOut",
             duration: 1,

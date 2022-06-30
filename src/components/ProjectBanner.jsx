@@ -23,6 +23,7 @@ const Title = styled.h1`
   font-weight: 500;
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
   span {
     min-width: 25px;
   }

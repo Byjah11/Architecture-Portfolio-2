@@ -5,7 +5,7 @@ export const links = [
     type: "competition",
     realized: true,
     year: "2021",
-    img: "bg_dubai.png",
+    img: "bg_dubai.jpg",
   },
   {
     id: 2,
@@ -13,7 +13,7 @@ export const links = [
     type: "competition",
     realized: false,
     year: "2020",
-    img: "bg_park.png",
+    img: "bg_park.jpg",
   },
   {
     id: 3,
@@ -29,7 +29,7 @@ export const links = [
     type: "university projects",
     realized: false,
     year: "2019 | 2021",
-    img: "bg_hotel.png",
+    img: "bg_hotel.jpg",
   },
   // {
   //   id: 5,
@@ -37,7 +37,7 @@ export const links = [
   //   type: "job-realated projects",
   //   realized: false,
   //   year: "2020 - 2022",
-  //   img: "bg_interior.png",
+  //   img: "bg_interior.jpg",
   // },
   {
     id: 5,
@@ -45,7 +45,7 @@ export const links = [
     type: "university / private initiative",
     realized: false,
     year: "2019 - 2021",
-    img: "bg_publications.png",
+    img: "bg_publications.jpg",
   },
   {
     id: 6,
@@ -53,6 +53,6 @@ export const links = [
     type: "university",
     realized: false,
     year: "2019",
-    img: "bg_hucu.png",
+    img: "bg_hucu.jpg",
   },
 ];

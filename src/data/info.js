@@ -23,7 +23,7 @@ export const info = {
       src: "/info/Forests.jpg",
     },
     {
-      title: "Forest2",
+      title: "Forest",
       src: "/info/Forests2.jpg",
     },
     {
@@ -35,11 +35,11 @@ export const info = {
       src: "/info/Painting.jpg",
     },
     {
-      title: "Painting 2",
+      title: "Painting",
       src: "/info/Painting 2.jpg",
     },
     {
-      title: "Painting 4",
+      title: "Painting",
       src: "/info/Painting 4.jpg",
     },
 
@@ -48,16 +48,16 @@ export const info = {
       src: "/info/Illustration.jpg",
     },
     {
-      title: "Illustration1",
+      title: "Illustration",
       src: "/info/Illustration1.jpg",
     },
 
     {
-      title: "Painting 3",
+      title: "Painting",
       src: "/info/Painting 3.jpg",
     },
     {
-      title: "Painting 5",
+      title: "Painting",
       src: "/info/Painting 5.jpg",
     },
   ],

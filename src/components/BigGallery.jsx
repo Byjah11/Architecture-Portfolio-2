@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 const Container = styled(motion.div)`
   width: 100%;
   height: 100vh;
+  overflow: hidden;
 `;
 
 const Image = styled.img`
@@ -19,9 +20,10 @@ const BigGallery = ({ imgs }) => {
     <>
       {imgs.map((img, index) => (
         <Container
+          key={index}
           initial={{ opacity: 0, x: index % 2 === 0 ? 300 : -300 }}
           whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true, margin: "-200px" }}
+          viewport={{ once: true, margin: "-200px 300px -200px 300px" }}
           transition={{
             ease: "easeOut",
             duration: 1,

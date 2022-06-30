@@ -15,6 +15,7 @@ const Container = styled.div`
   z-index: 2;
   padding-bottom: 64px;
   overflow: hidden;
+  width: 100%;
 `;
 
 const Bg = styled.img`
@@ -29,8 +30,14 @@ const Bg = styled.img`
 const Banner = styled.div`
   display: flex;
   position: relative;
+  flex-direction: column;
+  padding-top: 128px;
   min-height: 100vh;
   width: 100%;
+  @media (min-width: 1000px) {
+    flex-direction: row;
+    padding: 0;
+  }
 `;
 const Left = styled(motion.div)`
   flex: 1;
@@ -39,8 +46,11 @@ const Left = styled(motion.div)`
   justify-content: center;
 
   img {
-    width: 400px;
-    height: 400px;
+    width: 100%;
+    height: 100%;
+    max-width: 400px;
+    max-height: 400px;
+    object-fit: contain;
   }
 `;
 
@@ -55,6 +65,7 @@ const Right = styled.div`
 const Text = styled.div`
   width: 100%;
   max-width: 600px;
+  padding: 0 16px;
   padding-top: 128px;
 `;
 
@@ -75,7 +86,7 @@ const Info = () => {
     <Container>
       <Navbar />
       <Bg src="/assets/imgs/bg_top.png" top />
-      <Bg src="/assets/imgs/bg_down.png" bot />
+      <Bg src="/assets/imgs/bg_down.jpg" bot />
       <Banner>
         <ScrollBtn
           onClick={() => scrollTo("scroll")}

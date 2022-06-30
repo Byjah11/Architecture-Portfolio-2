@@ -12,6 +12,7 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 100%;
 `;
 
 const SplitRight = styled.div`
@@ -19,8 +20,15 @@ const SplitRight = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
+  gap: 16px;
   padding: 0 20%;
   height: 100%;
+  width: 100%;
+
+  img {
+    width: 100%;
+    object-fit: contain;
+  }
 `;
 
 const Desc = styled.div`
@@ -34,7 +42,7 @@ const Publication = () => {
       <Split img={p1.split.imgBig} alt="p1">
         <SplitRight>
           <img src={`/assets/imgs/${p1.split.imgSm}`} alt="p2" />
-          <Description textArr={p1.split.desc} align="left" />
+          <Description textArr={p1.split.desc} align="center" />
         </SplitRight>
       </Split>
       <ProjectBanner p={p2} />

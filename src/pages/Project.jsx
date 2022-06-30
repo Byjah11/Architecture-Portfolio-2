@@ -24,6 +24,7 @@ const Container = styled.div`
   align-items: center;
   position: relative;
   z-index: 2;
+  overflow: hidden;
 `;
 
 const Bg = styled.img`
@@ -68,7 +69,7 @@ const Project = () => {
   return (
     <Container>
       <Bg src="/assets/imgs/bg_top.png" top />
-      {id !== 3 && <Bg src="/assets/imgs/bg_down.png" bot />}
+      {id !== 3 && <Bg src="/assets/imgs/bg_down.jpg" bot />}
       {renderProject(id)}
       <ProjectFooter id={id} />
     </Container>

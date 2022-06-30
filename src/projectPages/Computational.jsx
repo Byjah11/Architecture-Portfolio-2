@@ -6,20 +6,20 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 100%;
 `;
 
 const Section = styled.div`
-  height: 100vh;
-  width: 100%;
+  /* height: 100vh; */
+  width: calc(100% - 16px);
   margin-top: 64px;
-  padding: 0 128px;
+  max-width: 1600px;
   display: flex;
   flex-direction: column;
 `;
 
 const Text = styled.div`
-  width: 100%;
-  max-width: 600px;
+  padding: 20%;
 `;
 
 const TopImg = styled.img`
@@ -30,6 +30,7 @@ const TopImg = styled.img`
 const Bottom = styled.div`
   display: flex;
   gap: 32px;
+  align-items: center;
 `;
 
 const ImgContainer = styled.div`
@@ -37,6 +38,7 @@ const ImgContainer = styled.div`
 `;
 
 const BotImg = styled.img`
+  display: block;
   width: 100%;
   height: 100%;
   object-fit: contain;
@@ -44,11 +46,10 @@ const BotImg = styled.img`
 
 const Video = styled.div`
   flex: 1;
-  height: 100%;
-  width: 100%;
   position: relative;
   display: flex;
   justify-content: center;
+  align-self: stretch;
 
   a {
     color: inherit;
@@ -86,6 +87,7 @@ const ImageC2 = styled.div`
   position: relative;
   margin-left: 32px;
   flex: 1;
+
   span {
     position: absolute;
     top: 0;
@@ -96,6 +98,8 @@ const ImageC2 = styled.div`
   }
   img {
     height: 100%;
+    width: 100%;
+    object-fit: contain;
   }
 `;
 

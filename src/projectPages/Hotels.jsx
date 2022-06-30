@@ -6,6 +6,9 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  overflow: hidden;
+
+  max-width: 100%;
 `;
 
 const SplitContent = styled.div`
@@ -25,7 +28,7 @@ const SplitImg = styled.img`
 `;
 
 const SplitImgBig = styled.img`
-  height: 100%;
+  height: 60%;
   width: 100%;
   object-fit: contain;
 `;

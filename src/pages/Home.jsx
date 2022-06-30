@@ -3,7 +3,7 @@ import { Navbar } from "../components";
 
 const Container = styled.div`
   height: 100vh;
-  background-image: url("/assets/imgs/bg_home.png");
+  background-image: url("/assets/imgs/bg_home.jpg");
   background-position: top;
   background-size: cover;
   position: relative;

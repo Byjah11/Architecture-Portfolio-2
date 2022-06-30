@@ -26,6 +26,7 @@ const Image = styled.img`
   height: 100%;
   object-fit: contain;
   vertical-align: top;
+  border: 4px solid white;
 `;
 
 const Wrapper = styled(motion.div)`
@@ -35,7 +36,7 @@ const Wrapper = styled(motion.div)`
   max-width: calc(100% - 32px);
   align-items: center;
   justify-content: center;
-  border: 4px solid white;
+  /* border: 4px solid white; */
   z-index: 151;
 `;
 
