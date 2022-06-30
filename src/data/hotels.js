@@ -64,5 +64,5 @@ export const h2 = {
     },
   ],
 
-  bigImgs: ["Hotel/2/Image 04.png"],
+  bigImgs: ["Hotel/2/Image.jpg"],
 };
