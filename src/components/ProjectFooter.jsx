@@ -4,26 +4,43 @@ import { links } from "../data/links";
 import { IconContext } from "react-icons";
 import { Link } from "react-router-dom";
 import { TiChevronLeft, TiChevronRight } from "react-icons/ti";
+import device from "./breakpoints.js";
 
 const Container = styled.div`
   display: flex;
+  flex-direction: column;
   position: relative;
   justify-content: center;
   align-items: center;
   z-index: 100;
   width: 100%;
-  padding: 64px;
+  padding: 32px 16px;
+  gap: 16px;
   text-transform: uppercase;
   font-size: 1.5rem;
   font-weight: 300;
+  text-align: center;
+  @media ${device.tablet} {
+    flex-direction: row;
+  }
 `;
 const Left = styled.div`
-  position: absolute;
-  left: 64px;
+  @media ${device.tablet} {
+    left: 32px;
+    position: absolute;
+  }
+  @media ${device.laptop} {
+    left: 64px;
+  }
 `;
 const Right = styled.div`
-  position: absolute;
-  right: 64px;
+  @media ${device.tablet} {
+    right: 32px;
+    position: absolute;
+  }
+  @media ${device.laptop} {
+    right: 64px;
+  }
 `;
 const Center = styled.div`
   display: flexs;

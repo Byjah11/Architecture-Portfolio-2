@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import device from "./breakpoints";
 
 export const NavLink = styled(Link)`
   cursor: pointer;
@@ -8,6 +9,7 @@ export const NavLink = styled(Link)`
   color: inherit;
   position: relative;
   color: ${(p) => (p.dark ? "#464f51" : "#fff")};
+  padding: 8px 0;
 
   &::after {
     content: "";
@@ -36,8 +38,12 @@ export const ScrollBtn = styled(motion.div)`
   height: 60px;
   border: 2px solid var(--text-dark);
   border-radius: 25px;
-  display: flex;
   justify-content: center;
+  display: none;
+
+  @media ${device.laptop} {
+    display: flex;
+  }
 
   &::before {
     content: "";

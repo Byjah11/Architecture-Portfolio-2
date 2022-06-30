@@ -4,12 +4,22 @@ import {
   Description,
   ProjectBanner,
   Split,
-  ProjectFooter,
+  device,
 } from "../components";
 import p from "../data/helsinki";
 
 const Text = styled.div`
-  padding: 0 20%;
+  padding: 32px;
+
+  @media ${device.mobileM} {
+    padding: 64px;
+  }
+  @media ${device.tablet} {
+    padding: 0 10%;
+  }
+  @media ${device.laptop} {
+    padding: 0 20%;
+  }
 `;
 const Helsinki = () => {
   return (

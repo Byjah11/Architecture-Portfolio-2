@@ -1,13 +1,24 @@
 import styled from "styled-components";
+import device from "./breakpoints";
 import GalleryCard from "./GalleryCard";
 
 const Container = styled.div`
-  padding: 0 64px;
+  padding: 0 16px;
   display: flex;
-  gap: 16px;
+  gap: 8px;
   flex-wrap: wrap;
   width: 100%;
-  margin-top: 64px;
+  margin-top: 32px;
+  @media ${device.mobileM} {
+    padding: 0 16px;
+  }
+  @media ${device.tablet} {
+    gap: 16px;
+    padding: 0 32px;
+  }
+  @media ${device.laptop} {
+    padding: 0 64px;
+  }
 `;
 
 const getDelay = (i) => {

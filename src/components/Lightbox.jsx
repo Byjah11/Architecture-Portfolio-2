@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { IconContext } from "react-icons";
 import { TiChevronLeft, TiChevronRight } from "react-icons/ti";
 import { CgClose } from "react-icons/cg";
+import device from "./breakpoints";
 
 const Container = styled(motion.div)`
   position: fixed;
@@ -14,11 +15,14 @@ const Container = styled(motion.div)`
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.8);
   z-index: 150;
-  display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   user-select: none;
+  display: none;
+  @media ${device.tablet} {
+    display: flex;
+  }
 `;
 
 const Image = styled.img`

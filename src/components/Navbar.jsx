@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { useLocation } from "react-router-dom";
 import { NavLink } from "./ui.js";
+import device from "./breakpoints";
 
 const Container = styled.div`
   display: flex;
@@ -11,12 +12,25 @@ const Container = styled.div`
   left: 0;
   z-index: 100;
   width: 100%;
-  padding: 64px 64px 0 64px;
+  padding: 16px 16px;
   text-transform: uppercase;
   font-size: 1.5rem;
   font-weight: 300;
+
+  @media ${device.mobileM} {
+    padding: 32px 32px;
+  }
+  @media ${device.tablet} {
+    padding: 32px 64px;
+  }
 `;
-const Left = styled.div``;
+const Left = styled.div`
+  display: none;
+  @media ${device.tablet} {
+    display: block;
+  }
+`;
+
 const Right = styled.div`
   display: flex;
   justify-content: space-between;
@@ -25,37 +39,19 @@ const Right = styled.div`
 
 const NavLinkProjects = styled(NavLink)`
   position: absolute;
-  bottom: 0;
-  right: 20%;
+  right: 16px;
   transform: translateX(5px);
+  background-color: ${(p) =>
+    p.pathname === "/" ? "var(--text-dark)" : "transparent"};
 
-  span {
-    position: relative;
+  padding: 8px 0;
 
-    &::before {
-      content: "";
-      height: 0;
-      width: 3px;
-      position: absolute;
-      background-color: #fff;
-      border-radius: 2px;
-      top: -12px;
-      left: 50%;
-      transform: translate(-50%, -100%);
-      animation: extend 1s linear 1s both;
-    }
+  @media ${device.mobileM} {
+    right: 32px;
+  }
 
-    /* &::after {
-      content: "";
-      height: 8vh;
-      width: 3px;
-      position: absolute;
-      background-color: #fff;
-      border-radius: 3px;
-      bottom: -6px;
-      left: 50%;
-      transform: translate(-50%, 100%);
-    } */
+  @media ${device.tablet} {
+    right: 20%;
   }
 
   @keyframes extend {
@@ -80,12 +76,8 @@ const Navbar = () => {
         </NavLink>
       </Left>
       <Right>
-        {pathname === "/" ? (
-          <NavLinkProjects to="/projects" dark={dark}>
-            Pro<span>j</span>ects
-          </NavLinkProjects>
-        ) : dark ? (
-          <NavLinkProjects to="/projects" dark={dark}>
+        {pathname === "/" || dark ? (
+          <NavLinkProjects to="/projects" dark={dark} pathname={pathname}>
             Projects
           </NavLinkProjects>
         ) : (

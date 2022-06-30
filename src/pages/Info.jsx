@@ -1,5 +1,6 @@
 import styled from "styled-components";
-import { Description, Gallery, Navbar } from "../components";
+import { Description, Gallery, Navbar, device } from "../components";
+import { NavLink } from "../components/ui";
 import { info } from "../data/info";
 import { ScrollBtn } from "../components/ui";
 import { motion } from "framer-motion";
@@ -13,7 +14,7 @@ const Container = styled.div`
   align-items: center;
   position: relative;
   z-index: 2;
-  padding-bottom: 64px;
+
   overflow: hidden;
   width: 100%;
 `;
@@ -34,7 +35,7 @@ const Banner = styled.div`
   padding-top: 128px;
   min-height: 100vh;
   width: 100%;
-  @media (min-width: 1000px) {
+  @media ${device.tablet} {
     flex-direction: row;
     padding: 0;
   }
@@ -44,6 +45,7 @@ const Left = styled(motion.div)`
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 16px;
 
   img {
     width: 100%;
@@ -60,18 +62,40 @@ const Right = styled.div`
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  padding: 0 16px;
+  @media ${device.tablet} {
+    padding: 107px 16px;
+  }
 `;
 
 const Text = styled.div`
   width: 100%;
-  max-width: 600px;
-  padding: 0 16px;
-  padding-top: 128px;
+  max-width: 400px;
 `;
 
 const Contact = styled(motion.div)`
   font-weight: 700;
-  font-size: 1.5rem;
+  height: 50vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  @media ${device.mobileL} {
+    font-size: 1.2rem;
+  }
+  @media ${device.tablet} {
+    font-size: 2rem;
+  }
+`;
+
+const BackLink = styled.div`
+  margin: 64px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  @media ${device.tablet} {
+    font-size: 2rem;
+  }
 `;
 
 const Info = () => {
@@ -114,21 +138,26 @@ const Info = () => {
           <Text>
             <Description textArr={info.desc} align="center" />
           </Text>
-          <Contact
-            initial={{ opacity: 0, scaleX: 1.3 }}
-            whileInView={{ opacity: 1, scaleX: 1 }}
-            viewport={{ once: true }}
-            transition={{
-              ease: "easeOut",
-              duration: 1,
-            }}
-          >
-            agnieszkanowacka6021@gmail.com
-          </Contact>
         </Right>
       </Banner>
       <div id="scroll" />
+      <Contact
+        initial={{ opacity: 0, scaleX: 1.3 }}
+        whileInView={{ opacity: 1, scaleX: 1 }}
+        viewport={{ once: true }}
+        transition={{
+          ease: "easeOut",
+          duration: 1,
+        }}
+      >
+        agnieszkanowacka6021@gmail.com
+      </Contact>
       <Gallery imgs={info.imgs} />
+      <BackLink>
+        <NavLink to={`/projects`} dark>
+          TO PROJECTS
+        </NavLink>
+      </BackLink>
     </Container>
   );
 };

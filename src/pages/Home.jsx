@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { Navbar } from "../components";
+import { device } from "../components";
 
 const Container = styled.div`
   height: 100vh;
@@ -13,25 +14,32 @@ const Container = styled.div`
 const Title = styled.div`
   position: absolute;
   top: 50%;
-  right: 20%;
-  /* transform: translate(-50%, -50%); */
-  font-size: 4rem;
+  right: 32px;
+  font-size: 2.5rem;
   font-weight: 300;
+
+  @media ${device.mobileM} {
+    right: 48px;
+    font-size: 3rem;
+  }
+  @media ${device.tablet} {
+    right: 20%;
+    font-size: 4rem;
+  }
 
   span {
     position: relative;
 
     &::before {
       content: "";
-      height: 38vh;
+      height: 50vh;
       width: 3px;
       position: absolute;
       background-color: #fff;
-      border-radius: 3px;
       top: -8px;
       left: 50%;
       transform: translate(-50%, -100%);
-      animation: extend38 1s linear;
+      animation: extend50 2s ease-in-out;
     }
 
     &::after {
@@ -40,20 +48,10 @@ const Title = styled.div`
       width: 3px;
       position: absolute;
       background-color: #fff;
-      border-radius: 3px;
       bottom: 0;
       left: 50%;
       transform: translate(-50%, 100%);
-      animation: extend50 1s linear;
-    }
-  }
-
-  @keyframes extend38 {
-    from {
-      height: 0;
-    }
-    to {
-      height: 38vh;
+      animation: extend50 2s ease-in-out;
     }
   }
   @keyframes extend50 {
@@ -61,7 +59,7 @@ const Title = styled.div`
       height: 0;
     }
     to {
-      height: 39vh;
+      height: 50vh;
     }
   }
 `;

@@ -2,12 +2,21 @@ import styled from "styled-components";
 import { useState } from "react";
 import Lightbox from "./Lightbox";
 import { AnimatePresence, motion } from "framer-motion";
+import device from "./breakpoints";
 
 const Wrapper = styled(motion.div)`
   flex: 1;
-  min-width: calc((100% - 32px) / 3);
-  max-width: calc((100% - 32px) / 3);
-  max-height: calc(50vh - 32px);
+  min-width: 100%;
+  /* max-height: calc(50vh - 32px); */
+
+  @media ${device.tablet} {
+    min-width: calc((100% - 16px) / 2);
+    aspect-ratio: 3/2;
+  }
+
+  @media ${device.laptop} {
+    min-width: calc((100% - 32px) / 3);
+  }
 `;
 
 const Image = styled.img`

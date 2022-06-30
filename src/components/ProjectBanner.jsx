@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { ScrollBtn, SnapSection } from "./ui";
-import Navbar from "./Navbar";
 import { motion } from "framer-motion";
+import device from "./breakpoints";
 
 const Container = styled.div`
   width: 100%;
@@ -19,27 +19,53 @@ const Wrapper = styled.div`
 `;
 
 const Title = styled.h1`
-  font-size: 6rem;
+  font-size: 3rem;
   font-weight: 500;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  @media ${device.mobileL} {
+    font-size: 4rem;
+  }
+  @media ${device.tablet} {
+    font-size: 5rem;
+  }
+  @media ${device.laptop} {
+    font-size: 6rem;
+  }
   flex-wrap: wrap;
   span {
-    min-width: 25px;
+    min-width: 14px;
+    @media ${device.mobileL} {
+      min-width: 18px;
+    }
+    @media ${device.tablet} {
+      min-width: 22px;
+    }
+    @media ${device.laptop} {
+      min-width: 25px;
+    }
   }
 `;
 
 const Subtitle = styled.h2`
   font-weight: 300;
-  font-size: 4rem;
+  font-size: 2rem;
   margin-bottom: 16px;
-  text-align-last: justify;
+  text-align: center;
+  @media ${device.tablet} {
+    font-size: 3rem;
+    text-align-last: justify;
+  }
 `;
 
 const Details = styled.div`
   display: flex;
   flex-direction: column;
-  max-width: 50%;
+  align-items: left;
+  padding: 0 16px;
+  @media ${device.tablet} {
+    max-width: 50%;
+  }
 `;
 
 const Entry = styled(motion.div)`
@@ -49,7 +75,7 @@ const Entry = styled(motion.div)`
 const Key = styled.div`
   padding: 4px 0;
   margin-right: 8px;
-  min-width: 150px;
+  min-width: 120px;
   text-align: right;
 `;
 

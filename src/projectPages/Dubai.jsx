@@ -4,10 +4,8 @@ import {
   BigGallery,
   ProjectBanner,
   Description,
-  ProjectFooter,
-  Navbar,
+  device,
 } from "../components";
-import { SnapContainer, SnapSection } from "../components/ui";
 import p from "../data/dubai";
 
 const Container = styled.div`
@@ -17,7 +15,17 @@ const Container = styled.div`
 `;
 
 const Desc = styled.div`
-  padding: 128px 33%;
+  padding: 32px;
+
+  @media ${device.mobileM} {
+    padding: 64px;
+  }
+  @media ${device.tablet} {
+    padding: 128px 20%;
+  }
+  @media ${device.laptop} {
+    padding: 128px 30%;
+  }
 `;
 
 const Dubai = () => {

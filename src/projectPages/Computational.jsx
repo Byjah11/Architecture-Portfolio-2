@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Description, ProjectBanner, Split } from "../components";
+import { Description, ProjectBanner, Split, device } from "../components";
 import { c1, c2 } from "../data/computational";
 
 const Container = styled.div`
@@ -11,15 +11,28 @@ const Container = styled.div`
 
 const Section = styled.div`
   /* height: 100vh; */
-  width: calc(100% - 16px);
+  width: calc(100% - 32px);
   margin-top: 64px;
   max-width: 1600px;
   display: flex;
   flex-direction: column;
+  @media ${device.tablet} {
+    width: calc(100% - 64px);
+  }
 `;
 
 const Text = styled.div`
-  padding: 20%;
+  padding: 32px;
+
+  @media ${device.mobileM} {
+    padding: 64px;
+  }
+  @media ${device.tablet} {
+    padding: 0 10%;
+  }
+  @media ${device.laptop} {
+    padding: 0 20%;
+  }
 `;
 
 const TopImg = styled.img`
@@ -29,8 +42,14 @@ const TopImg = styled.img`
 
 const Bottom = styled.div`
   display: flex;
+  width: 100%;
   gap: 32px;
   align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  @media ${device.tablet} {
+    flex-direction: row;
+  }
 `;
 
 const ImgContainer = styled.div`
@@ -45,11 +64,18 @@ const BotImg = styled.img`
 `;
 
 const Video = styled.div`
-  flex: 1;
   position: relative;
   display: flex;
   justify-content: center;
-  align-self: stretch;
+  align-items: center;
+  aspect-ratio: 3/2;
+  width: 100%;
+
+  @media ${device.tablet} {
+    flex: 1;
+    height: auto;
+    align-self: stretch;
+  }
 
   a {
     color: inherit;
@@ -57,29 +83,53 @@ const Video = styled.div`
 `;
 
 const Section2 = styled.div`
-  height: 100vh;
+  min-height: 100vh;
   width: 100%;
-  padding: 64px 128px;
+  padding: 16px;
   display: flex;
+  flex-direction: column-reverse;
+  gap: 32px;
+  @media ${device.mobileL} {
+    padding: 32px;
+  }
+  @media ${device.tablet} {
+    padding: 64px;
+  }
+  @media ${device.laptop} {
+    flex-direction: row;
+    gap: 0px;
+    padding: 128px 10%;
+  }
+  @media ${device.laptopL} {
+    height: 100vh;
+  }
 `;
 
 const Left = styled.div`
   flex: 1;
   display: flex;
+  flex-direction: column;
+  gap: 16px;
+  @media ${device.mobileL} {
+    flex-direction: row;
+    gap: 0px;
+  }
 `;
 const Right = styled.div`
   flex: 1;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-evenly;
 `;
 
 const RImg = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  text-align: center;
   img {
     width: 100%;
+    margin-bottom: 16px;
   }
 `;
 
@@ -125,7 +175,7 @@ const Computational = () => {
       <ProjectBanner p={c1} btn />
       <Split img={c1.split.img} sm>
         <Text>
-          <Description textArr={c1.split.desc} align="center" />
+          <Description textArr={c1.split.desc} />
         </Text>
       </Split>
       <Section>
@@ -184,7 +234,7 @@ const Computational = () => {
         </Left>
         <Right>
           <Text>
-            <Description textArr={c2.desc} align="left" />
+            <Description textArr={c2.desc} />
           </Text>
           <RImg>
             <img src="/assets/imgs/Comp/Tile.jpg" alt="lichens" />

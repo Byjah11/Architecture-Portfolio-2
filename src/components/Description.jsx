@@ -9,7 +9,7 @@ const Paragraph = styled(motion.p)`
   text-align: ${(p) => p.align};
   text-align-last: ${(p) => (p.align === "justify" ? "center" : p.align)};
   margin-bottom: 16px;
-  font-size: 1.2rem;
+  font-size: 1rem;
 
   a {
     color: var(--text-dark);

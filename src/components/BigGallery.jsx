@@ -4,13 +4,13 @@ import { motion } from "framer-motion";
 
 const Container = styled(motion.div)`
   width: 100%;
-  height: 100vh;
+  max-height: 100vh;
   overflow: hidden;
 `;
 
 const Image = styled.img`
   width: 100%;
-  height: 100vh;
+  max-height: 100vh;
   padding: 32px 0;
   object-fit: contain;
 `;

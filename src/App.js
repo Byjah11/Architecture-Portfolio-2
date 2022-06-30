@@ -7,7 +7,7 @@ import Info from "./pages/Info";
 import styled from "styled-components";
 
 const Container = styled.div`
-  display: none;
+  display: block;
   @media (min-width: 700px) {
     display: block;
   }
@@ -15,10 +15,9 @@ const Container = styled.div`
 
 const MobileWarning = styled.div`
   position: fixed;
-  background-color: var(--text-dark);
+  background-color: rgba(0, 0, 0, 0.6);
   width: 100%;
-  height: 100%;
-  top: 0;
+  bottom: 0;
   left: 0;
   z-index: 200;
   display: flex;
@@ -26,7 +25,7 @@ const MobileWarning = styled.div`
   justify-content: center;
   color: #fff;
   text-align: center;
-  font-size: 1.5rem;
+  font-size: 1rem;
   padding: 8px;
   @media (min-width: 700px) {
     display: none;
@@ -36,9 +35,7 @@ const MobileWarning = styled.div`
 const App = () => {
   return (
     <>
-      <MobileWarning>
-        You should try opening this site on bigger device
-      </MobileWarning>
+      <MobileWarning>PS looks better on a bigger screen</MobileWarning>
       <Container>
         <Navbar />
         <Routes>

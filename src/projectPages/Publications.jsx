@@ -1,11 +1,5 @@
 import styled from "styled-components";
-import {
-  Gallery,
-  BigGallery,
-  ProjectBanner,
-  Description,
-  Split,
-} from "../components";
+import { device, ProjectBanner, Description, Split } from "../components";
 import { p1, p2 } from "../data/publications";
 
 export const Container = styled.div`
@@ -21,18 +15,42 @@ const SplitRight = styled.div`
   align-items: center;
   justify-content: space-evenly;
   gap: 16px;
-  padding: 0 20%;
   height: 100%;
   width: 100%;
 
+  padding: 32px;
+
+  @media ${device.mobileM} {
+    padding: 64px;
+  }
+  @media ${device.tablet} {
+    padding: 0 10%;
+  }
+  @media ${device.laptop} {
+    padding: 0 20%;
+  }
   img {
     width: 100%;
+
     object-fit: contain;
+    @media ${device.tablet} {
+      width: 70%;
+    }
   }
 `;
 
 const Desc = styled.div`
-  padding: 0 30%;
+  padding: 32px;
+
+  @media ${device.mobileM} {
+    padding: 64px;
+  }
+  @media ${device.tablet} {
+    padding: 128px 20%;
+  }
+  @media ${device.laptop} {
+    padding: 128px 30%;
+  }
 `;
 
 const Publication = () => {

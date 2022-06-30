@@ -1,15 +1,19 @@
 import styled from "styled-components";
 import { useState } from "react";
-import { SnapSection } from "./ui";
+import device from "./breakpoints";
 import { motion } from "framer-motion";
 
 const Container = styled.div`
-  min-height: 100vh;
+  /* min-height: 100vh; */
   width: 100%;
   overflow: hidden;
   display: flex;
-  flex-direction: ${(p) => (p.flip ? "row-reverse" : "row")};
-  /* padding: 64px; */
+  flex-direction: column;
+  gap: 16px;
+  @media ${device.tablet} {
+    flex-direction: ${(p) => (p.flip ? "row-reverse" : "row")};
+    gap: 0px;
+  }
 `;
 
 const Left = styled(motion.div)`
@@ -25,7 +29,8 @@ const Left = styled(motion.div)`
 
 const ImgContainer = styled(motion.div)`
   width: 100%;
-  height: 100vh;
+  height: 100%;
+  max-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -35,6 +40,7 @@ const Image = styled.img`
   /* display: block; */
   /* width: ${(p) => (p.equal ? "100%" : "auto")}; */
   width: 100%;
+  max-height: ${(p) => (p.sm ? "80vh" : "100vh")};
   height: ${(p) => (p.sm ? "50%" : "100%")};
   /* object-fit: ${(p) =>
     p.equal ? (p.sm ? "contain" : "cover") : "contain"}; */

@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { links } from "../data/links";
 import { NavLink } from "../components/ui";
-import { Navbar } from "../components";
+import { device } from "../components";
 
 const Container = styled.div`
   height: 100vh;
@@ -29,17 +29,25 @@ const LinkItem = styled.div`
   display: flex;
   justify-content: center;
   align-items: flex-end;
-  font-size: 2rem;
+  text-align: center;
+  font-size: 1.5rem;
   text-transform: uppercase;
   font-weight: 300;
+  @media ${device.tablet} {
+    font-size: 2rem;
+  }
 `;
 
 const Info = styled.div`
   position: absolute;
+  display: none;
   opacity: 0;
   transition: all 250ms ease;
   font-size: 1.5rem;
   z-index: 2;
+  @media ${device.tablet} {
+    display: block;
+  }
 `;
 
 const Year = styled(Info)`
