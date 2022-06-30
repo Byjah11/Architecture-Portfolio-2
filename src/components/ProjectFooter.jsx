@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { NavLink } from "./ui.js";
-import { projects } from "../data.js";
+import { links } from "../data/links";
 import { IconContext } from "react-icons";
 import { Link } from "react-router-dom";
 import { TiChevronLeft, TiChevronRight } from "react-icons/ti";
@@ -68,14 +68,14 @@ const Arrow = styled(Link)`
 const ProjectFooter = ({ id }) => {
   const prevId = () => {
     if (id <= 1) {
-      return projects.length;
+      return links.length;
     } else {
       return id - 1;
     }
   };
 
   const nextId = () => {
-    if (id >= projects.length) {
+    if (id >= links.length) {
       return 1;
     } else {
       return id + 1;

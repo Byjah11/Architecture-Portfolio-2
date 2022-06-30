@@ -1,11 +1,19 @@
 import styled from "styled-components";
-import ProjectBanner from "../components/ProjectBanner";
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
-import { projects } from "../data";
-import ProjectFooter from "../components/ProjectFooter";
-import BigGallery from "../components/BigGallery";
-import Gallery from "../components/Gallery";
+// import { projects } from "../data/data";
+import { Navbar, ProjectFooter } from "../components";
+import { SnapContainer } from "../components/ui";
+
+import {
+  Dubai,
+  Helsinki,
+  Computational,
+  Hotels,
+  Interior,
+  Publications,
+  Ukraine,
+} from "../projectPages";
 
 const Container = styled.div`
   color: var(--text-dark);
@@ -16,24 +24,6 @@ const Container = styled.div`
   align-items: center;
   position: relative;
   z-index: 2;
-`;
-
-const Wrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-`;
-
-const Desc = styled.div`
-  max-width: 30%;
-  margin: 96px 0;
-`;
-
-const Paragraph = styled.p`
-  text-align: justify;
-  text-align-last: center;
-  margin-bottom: 16px;
-  font-size: 1.2rem;
 `;
 
 const Bg = styled.img`
@@ -48,31 +38,38 @@ const Bg = styled.img`
 const Project = () => {
   const { pathname } = useLocation();
   const id = Number(pathname.split("/")[2]);
-  const project = projects.find((p) => p.id === id);
+  // const project = projects.find((p) => p.id === id);
 
   useEffect(() => {
     window.scrollTo({ top: 0 });
   }, [pathname]);
 
+  const renderProject = (id) => {
+    switch (id) {
+      case 1:
+        return <Dubai />;
+      case 2:
+        return <Helsinki />;
+      case 3:
+        return <Computational />;
+      case 4:
+        return <Hotels />;
+      // case 5:
+      //   return <Interior />;
+      case 5:
+        return <Publications />;
+      case 6:
+        return <Ukraine />;
+      default:
+        return null;
+    }
+  };
+
   return (
     <Container>
       <Bg src="/assets/imgs/bg_top.png" top />
-      <Bg src="/assets/imgs/bg_down.png" bot />
-      {project.subProjects.map((p) => (
-        <Wrapper key={p.id}>
-          <ProjectBanner p={p} />
-          <BigGallery imgs={p.bigImgs} />
-          <Desc>
-            {p.desc.map((par, i) => (
-              <Paragraph
-                key={i}
-                dangerouslySetInnerHTML={{ __html: par }}
-              ></Paragraph>
-            ))}
-          </Desc>
-          <Gallery imgs={p.imgs} />
-        </Wrapper>
-      ))}
+      {id !== 3 && <Bg src="/assets/imgs/bg_down.png" bot />}
+      {renderProject(id)}
       <ProjectFooter id={id} />
     </Container>
   );

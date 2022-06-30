@@ -1,4 +1,7 @@
 import styled from "styled-components";
+import { ScrollBtn, SnapSection } from "./ui";
+import Navbar from "./Navbar";
+import { motion } from "framer-motion";
 
 const Container = styled.div`
   width: 100%;
@@ -20,6 +23,9 @@ const Title = styled.h1`
   font-weight: 500;
   display: flex;
   justify-content: space-between;
+  span {
+    min-width: 25px;
+  }
 `;
 
 const Subtitle = styled.h2`
@@ -35,7 +41,7 @@ const Details = styled.div`
   max-width: 50%;
 `;
 
-const Entry = styled.div`
+const Entry = styled(motion.div)`
   display: flex;
 `;
 
@@ -51,57 +57,7 @@ const Value = styled.div`
   padding: 4px 8px;
 `;
 
-const ScrollBtn = styled.div`
-  position: absolute;
-  bottom: 15px;
-  left: 50%;
-  transform: translate(-50%, 0);
-  cursor: pointer;
-  width: 30px;
-  height: 60px;
-  border: 2px solid var(--text-dark);
-  border-radius: 25px;
-  display: flex;
-  justify-content: center;
-
-  &::before {
-    content: "";
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    position: absolute;
-    top: 10px;
-    background-color: var(--text-dark);
-    animation: move-down 2s infinite;
-  }
-
-  &::after {
-    content: "Scroll Down";
-    display: block;
-    width: 200px;
-    position: absolute;
-    text-align: center;
-    top: -10px;
-    transform: translateY(-100%);
-    transition: all 0.5s ease;
-    color: var(--text-dark);
-  }
-
-  @keyframes move-down {
-    0% {
-      opacity: 0;
-    }
-    50% {
-      opacity: 0.8;
-    }
-    100% {
-      transform: translateY(30px);
-      opacity: 0;
-    }
-  }
-`;
-
-const ProjectBanner = ({ p }) => {
+const ProjectBanner = ({ p, btn }) => {
   const scrollTo = (id) => {
     const section = document.getElementById(id);
     const yOffset = 0;
@@ -111,27 +67,76 @@ const ProjectBanner = ({ p }) => {
   };
 
   return (
-    <Container>
-      {p.id === 1 && <ScrollBtn onClick={() => scrollTo("gallery")} />}
-      <Wrapper>
-        <div>
-          <Title>
-            {p.title.split("").map((l, i) => (
-              <span key={i}>{l}</span>
-            ))}
-          </Title>
-          <Subtitle>{p.subtitle}</Subtitle>
-        </div>
-        <Details>
-          {Object.entries(p.details).map(([key, value]) => (
-            <Entry key={key}>
-              <Key>{key}</Key>
-              <Value>{value}</Value>
-            </Entry>
-          ))}
-        </Details>
-      </Wrapper>
-    </Container>
+    <SnapSection>
+      <>
+        <Container>
+          {btn && (
+            <ScrollBtn
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{
+                ease: "easeOut",
+                duration: 1,
+                delay: 1,
+              }}
+              onClick={() => scrollTo("scroll")}
+            />
+          )}
+          <Wrapper>
+            <div>
+              <Title>
+                {p.title.split("").map((l, i) => (
+                  <motion.span
+                    initial={{ opacity: 0, y: -100 }}
+                    whileInView={{ y: 0, opacity: 1 }}
+                    viewport={{ once: true }}
+                    transition={{
+                      ease: "easeOut",
+                      duration: 1,
+                      delay: i * 0.1,
+                    }}
+                    key={i}
+                  >{`${l}`}</motion.span>
+                ))}
+              </Title>
+              <Subtitle>
+                <motion.div
+                  initial={{ opacity: 0, scaleX: 1.2 }}
+                  whileInView={{ scaleX: 1, opacity: 1 }}
+                  viewport={{ once: true }}
+                  transition={{
+                    ease: "easeOut",
+                    duration: 2,
+                  }}
+                >
+                  {p.subtitle}
+                </motion.div>
+              </Subtitle>
+            </div>
+            <Details>
+              {Object.entries(p.details).map(([key, value], i) => (
+                <Entry
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
+                  viewport={{ once: true }}
+                  transition={{
+                    ease: "easeOut",
+                    duration: 1,
+                    delay: i * 0.3,
+                  }}
+                  key={key}
+                >
+                  <Key>{key}</Key>
+                  <Value>{value}</Value>
+                </Entry>
+              ))}
+            </Details>
+          </Wrapper>
+        </Container>
+        <div id="scroll" />
+      </>
+    </SnapSection>
   );
 };
 

@@ -31,7 +31,8 @@ const Image = styled.img`
 const Wrapper = styled(motion.div)`
   position: relative;
   display: flex;
-  height: calc(100% - 32px);
+  max-height: calc(100% - 32px);
+  max-width: calc(100% - 32px);
   align-items: center;
   justify-content: center;
   border: 4px solid white;

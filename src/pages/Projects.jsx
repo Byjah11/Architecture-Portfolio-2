@@ -1,6 +1,7 @@
 import styled from "styled-components";
-import { projects } from "../data";
+import { links } from "../data/links";
 import { NavLink } from "../components/ui";
+import { Navbar } from "../components";
 
 const Container = styled.div`
   height: 100vh;
@@ -98,7 +99,7 @@ const Projects = () => {
   return (
     <Container>
       <Wrapper>
-        {projects.map((p, i) => (
+        {links.map((p, i) => (
           <LinkItem key={p.id}>
             <ProjectLink to={`/project/${p.id}`} delay={i * 250}>
               {p.link}

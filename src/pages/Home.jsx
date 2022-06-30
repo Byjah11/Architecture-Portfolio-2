@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Navbar } from "../components";
 
 const Container = styled.div`
   height: 100vh;

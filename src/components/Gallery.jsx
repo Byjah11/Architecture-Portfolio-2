@@ -7,7 +7,18 @@ const Container = styled.div`
   gap: 16px;
   flex-wrap: wrap;
   width: 100%;
+  margin-top: 64px;
 `;
+
+const getDelay = (i) => {
+  if (i % 3 === 0) {
+    return 0;
+  } else if (i % 3 === 1) {
+    return 0.1;
+  } else if (i % 3 === 2) {
+    return 0.2;
+  }
+};
 
 const Gallery = ({ imgs }) => {
   return (
@@ -18,7 +29,7 @@ const Gallery = ({ imgs }) => {
           imgs={imgs}
           img={img}
           index={index}
-          delay={index / 10}
+          delay={getDelay(index)}
         />
       ))}
     </Container>

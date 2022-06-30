@@ -8,6 +8,7 @@ const Container = styled.div`
   align-items: flex-end;
   position: absolute;
   top: 0;
+  left: 0;
   z-index: 100;
   width: 100%;
   padding: 64px 64px 0 64px;
@@ -69,31 +70,31 @@ const NavLinkProjects = styled(NavLink)`
 
 const Navbar = () => {
   const { pathname } = useLocation();
-  const isProject = pathname.split("/")[1] === "project";
+  const dark = pathname.split("/")[1] === "project" || pathname === "/info";
 
   return (
     <Container>
       <Left>
-        <NavLink to="/" dark={isProject}>
+        <NavLink to="/" dark={dark}>
           Agnieszka Nowacka
         </NavLink>
       </Left>
       <Right>
         {pathname === "/" ? (
-          <NavLinkProjects to="/projects" dark={isProject}>
+          <NavLinkProjects to="/projects" dark={dark}>
             Pro<span>j</span>ects
           </NavLinkProjects>
-        ) : isProject ? (
-          <NavLinkProjects to="/projects" dark={isProject}>
+        ) : dark ? (
+          <NavLinkProjects to="/projects" dark={dark}>
             Projects
           </NavLinkProjects>
         ) : (
-          <NavLinkProjects to="/" dark={isProject}>
+          <NavLinkProjects to="/" dark={dark}>
             Close
           </NavLinkProjects>
         )}
 
-        <NavLink to="/info" dark={isProject}>
+        <NavLink to="/info" dark={dark}>
           Info
         </NavLink>
       </Right>

@@ -5,11 +5,15 @@ import { AnimatePresence, motion } from "framer-motion";
 
 const Wrapper = styled(motion.div)`
   flex: 1;
-  min-width: calc(33.33% - 32px);
+  min-width: calc((100% - 32px) / 3);
+  max-width: calc((100% - 32px) / 3);
+  max-height: calc(50vh - 32px);
 `;
 
 const Image = styled.img`
   width: 100%;
+  height: 100%;
+  object-fit: cover;
   vertical-align: top;
 `;
 
@@ -33,6 +37,7 @@ const ImgContainer = styled.div`
   cursor: pointer;
   border-radius: 8px;
   overflow: hidden;
+  height: 100%;
 
   &:hover ${Overlay} {
     opacity: 1;

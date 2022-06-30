@@ -10,4 +10,5 @@ body {
   color: #fff;
   font-family: "Comfortaa", cursive;
   background: #464f51;
+  overflow-x: hidden;
 }
