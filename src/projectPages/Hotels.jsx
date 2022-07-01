@@ -49,8 +49,9 @@ const SplitImg = styled.img`
 `;
 
 const SplitImgBig = styled.img`
-  height: 60%;
+  height: 100%;
   width: 100%;
+  max-height: 80vh;
   object-fit: contain;
 `;
 

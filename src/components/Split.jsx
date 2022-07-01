@@ -53,15 +53,12 @@ const Right = styled(motion.div)`
   display: flex;
   align-items: center;
   justify-content: center;
-
   min-width: 50%;
-  /* img {
-    max-height: 100vh;
-  } */
 `;
 
 const Split = ({ img, flip, children, sm }) => {
   const [equal, setEqual] = useState(true);
+
   return (
     <Container flip={flip}>
       <Left

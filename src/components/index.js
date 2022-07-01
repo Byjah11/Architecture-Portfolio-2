@@ -7,3 +7,4 @@ export { default as BigGallery } from "./BigGallery.jsx";
 export { default as Description } from "./Description.jsx";
 export { default as Split } from "./Split.jsx";
 export { default as device } from "./breakpoints.js";
+export { default as Footer } from "./Footer.jsx";

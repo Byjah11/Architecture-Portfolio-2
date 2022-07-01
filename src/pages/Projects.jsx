@@ -77,7 +77,8 @@ const Overlay = styled.div`
 const ProjectLink = styled(NavLink)`
   z-index: 2;
   position: relative;
-  padding-top: 48px;
+  padding: 16px 0;
+  margin: 16px 0;
   animation: reveal 0.5s ease;
   animation-delay: ${(p) => `${p.delay}ms`};
   animation-fill-mode: both;

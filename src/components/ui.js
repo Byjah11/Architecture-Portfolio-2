@@ -16,7 +16,7 @@ export const NavLink = styled(Link)`
     width: 0;
     height: 3px;
     position: absolute;
-    bottom: -5px;
+    bottom: 5px;
     left: 50%;
     transform: translateX(-50%);
     background-color: ${(p) => (p.dark ? "#464f51" : "#fff")};

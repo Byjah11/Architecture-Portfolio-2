@@ -1,7 +1,6 @@
 import styled from "styled-components";
 import {
   Gallery,
-  BigGallery,
   ProjectBanner,
   Description,
   Split,
@@ -33,10 +32,14 @@ const Ukraine = () => {
   return (
     <Container>
       <ProjectBanner p={p} btn />
-      <BigGallery imgs={p.bigImgs} />
-      <Split img={p.split.img}>
+      <Split img={p.split1.img} flip>
         <Desc>
-          <Description textArr={p.split.desc} />
+          <Description textArr={p.split1.desc} />
+        </Desc>
+      </Split>
+      <Split img={p.split2.img}>
+        <Desc>
+          <Description textArr={p.split2.desc} />
         </Desc>
       </Split>
       <Gallery imgs={p.imgs} />

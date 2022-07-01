@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import { Navbar } from "../components";
 import { device } from "../components";
+import { Link } from "react-router-dom";
 
 const Container = styled.div`
   height: 100vh;
@@ -11,8 +11,10 @@ const Container = styled.div`
   overflow: hidden;
 `;
 
-const Title = styled.div`
+const Title = styled(Link)`
   position: absolute;
+  color: #fff;
+  text-decoration: none;
   top: 50%;
   right: 32px;
   font-size: 2.5rem;
@@ -67,7 +69,7 @@ const Title = styled.div`
 const Home = () => {
   return (
     <Container>
-      <Title>
+      <Title to="/projects">
         PORTFOL<span>I</span>O
       </Title>
     </Container>

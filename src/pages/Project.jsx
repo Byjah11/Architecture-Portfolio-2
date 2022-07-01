@@ -2,15 +2,13 @@ import styled from "styled-components";
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 // import { projects } from "../data/data";
-import { Navbar, ProjectFooter } from "../components";
-import { SnapContainer } from "../components/ui";
+import { ProjectFooter, Footer } from "../components";
 
 import {
   Dubai,
   Helsinki,
   Computational,
   Hotels,
-  Interior,
   Publications,
   Ukraine,
 } from "../projectPages";
@@ -72,6 +70,7 @@ const Project = () => {
       {id !== 3 && <Bg src="/assets/imgs/bg_down.jpg" bot />}
       {renderProject(id)}
       <ProjectFooter id={id} />
+      <Footer />
     </Container>
   );
 };

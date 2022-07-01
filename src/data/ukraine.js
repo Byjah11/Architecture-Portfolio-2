@@ -9,8 +9,15 @@ const p = {
     date: "07.2019",
     co_authors: "Scientific Architecture circle IX„Piętro”",
   },
-  bigImgs: ["Hucu/Main1.jpg"],
-  split: {
+  split1: {
+    img: "Hucu/Main1.jpg",
+    desc: [
+      "The main goal of the expedition was to create technical architectural and construction documentation of historic wooden churches in the Eastern Carpathians.",
+      "This is extremely important because the churches we measure do not have drawings that, if the building is destroyed, would be a testimony to them and could be used for conservation purposes.",
+      "After the expedition, I made drawings of the church in Rusów. Together with the academic circle, we presented the expedition at conferences and the StRuNa 2019 competition for the best scientific projects of students and doctoral students, where it won the first place in the expedition of the year category.",
+    ],
+  },
+  split2: {
     img: "Hucu/Main2.jpg",
     desc: [
       "Sample drawing of the church -plan",

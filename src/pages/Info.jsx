@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Description, Gallery, Navbar, device } from "../components";
+import { Description, Gallery, Navbar, device, Footer } from "../components";
 import { NavLink } from "../components/ui";
 import { info } from "../data/info";
 import { ScrollBtn } from "../components/ui";
@@ -129,7 +129,7 @@ const Info = () => {
           viewport={{ once: true }}
           transition={{
             ease: "easeOut",
-            duration: 1.8,
+            duration: 2,
           }}
         >
           <img src="/assets/imgs/info/Gif.gif" alt="me" />
@@ -158,6 +158,7 @@ const Info = () => {
           TO PROJECTS
         </NavLink>
       </BackLink>
+      <Footer />
     </Container>
   );
 };
