@@ -4,6 +4,8 @@ import { NavLink } from "../components/ui";
 import { info } from "../data/info";
 import { ScrollBtn } from "../components/ui";
 import { motion } from "framer-motion";
+import { IconContext } from "react-icons";
+import { FaInstagram, FaYoutube } from "react-icons/fa";
 
 const Container = styled.div`
   color: var(--text-dark);
@@ -70,7 +72,18 @@ const Right = styled.div`
 
 const Text = styled.div`
   width: 100%;
-  max-width: 400px;
+  max-width: 600px;
+`;
+
+const Socials = styled.div`
+  display: flex;
+  gap: 1rem;
+`;
+
+const IconLink = styled.a`
+  display: flex;
+  cursor: pointer;
+  color: var(--text-dark);
 `;
 
 const Contact = styled(motion.div)`
@@ -136,8 +149,26 @@ const Info = () => {
         </Left>
         <Right>
           <Text>
-            <Description textArr={info.desc} align="center" />
+            <Description textArr={info.desc} />
           </Text>
+          <Socials>
+            <IconContext.Provider
+              value={{ size: "2rem", style: { verticalAlign: "middle" } }}
+            >
+              <IconLink
+                href="https://www.instagram.com/ai.archi.aagnen/"
+                target="_blank"
+              >
+                <FaInstagram />
+              </IconLink>
+              <IconLink
+                href="https://www.youtube.com/channel/UCBuQSoYwsG4I-oitbyDRu-w"
+                target="_blank"
+              >
+                <FaYoutube />
+              </IconLink>
+            </IconContext.Provider>
+          </Socials>
         </Right>
       </Banner>
       <div id="scroll" />

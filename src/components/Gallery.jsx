@@ -8,7 +8,7 @@ const Container = styled.div`
   gap: 8px;
   flex-wrap: wrap;
   width: 100%;
-  margin-top: 32px;
+  margin: 32px 0;
   @media ${device.mobileM} {
     padding: 0 16px;
   }

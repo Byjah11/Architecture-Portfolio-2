@@ -4,7 +4,7 @@ import { NavLink } from "../components/ui";
 import { device } from "../components";
 
 const Container = styled.div`
-  height: 100vh;
+  min-height: 100vh;
   background-image: url("/assets/imgs/bg_home.jpg");
   background-position: top;
   background-size: cover;
@@ -13,6 +13,7 @@ const Container = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 107px 0;
 `;
 
 const Wrapper = styled.div`
@@ -20,7 +21,6 @@ const Wrapper = styled.div`
   flex-direction: column;
   width: 100%;
   padding: 0 64px;
-  padding-top: 43px;
 `;
 
 const LinkItem = styled.div`
@@ -28,7 +28,7 @@ const LinkItem = styled.div`
   position: relative;
   display: flex;
   justify-content: center;
-  align-items: flex-end;
+  align-items: center;
   text-align: center;
   font-size: 1.5rem;
   text-transform: uppercase;

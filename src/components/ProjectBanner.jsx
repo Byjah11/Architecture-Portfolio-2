@@ -54,7 +54,6 @@ const Subtitle = styled.h2`
   text-align: center;
   @media ${device.tablet} {
     font-size: 3rem;
-    text-align-last: justify;
   }
 `;
 
@@ -64,7 +63,7 @@ const Details = styled.div`
   align-items: left;
   padding: 0 16px;
   @media ${device.tablet} {
-    max-width: 50%;
+    max-width: 33vw;
   }
 `;
 

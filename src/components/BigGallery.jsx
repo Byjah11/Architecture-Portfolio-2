@@ -6,6 +6,8 @@ const Container = styled(motion.div)`
   width: 100%;
   max-height: 100vh;
   overflow: hidden;
+  display: flex;
+  justify-content: center;
 `;
 
 const Image = styled.img`
@@ -13,9 +15,10 @@ const Image = styled.img`
   max-height: 100vh;
   padding: 32px 0;
   object-fit: contain;
+  max-width: ${(p) => p.maxW};
 `;
 
-const BigGallery = ({ imgs }) => {
+const BigGallery = ({ imgs, maxW }) => {
   return (
     <>
       {imgs.map((img, index) => (
@@ -29,7 +32,12 @@ const BigGallery = ({ imgs }) => {
             duration: 1,
           }}
         >
-          <Image key={index} src={`/assets/imgs/${img}`} alt={`img${index}`} />
+          <Image
+            key={index}
+            src={`/assets/imgs/${img}`}
+            alt={`img${index}`}
+            maxW={maxW}
+          />
         </Container>
       ))}
     </>
