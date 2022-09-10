@@ -24,13 +24,13 @@ const Description = ({ textArr, align = "justify" }) => {
           key={i}
           dangerouslySetInnerHTML={{ __html: par }}
           align={align}
-          initial={{ opacity: 0, x: i % 2 === 0 ? 100 : -100 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true, margin: "0px 300px 0px 300px" }}
-          transition={{
-            ease: "easeOut",
-            duration: 1,
-          }}
+          // initial={{ opacity: 0, x: i % 2 === 0 ? 100 : -100 }}
+          // whileInView={{ opacity: 1, x: 0 }}
+          // viewport={{ once: true, margin: "0px 300px 0px 300px" }}
+          // transition={{
+          //   ease: "easeOut",
+          //   duration: 1,
+          // }}
         />
       ))}
     </Desc>

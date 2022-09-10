@@ -33,8 +33,8 @@ export const p2 = {
 
   desc: [
     "The article was a short and easy-to-read, yet in-depth analysis of the literature on biodiversity in design. I wrote it in English during my internship in Finland with the support of landscape architect Ashley D. Penn.",
-    "The exceptionally positive reception of the article meant that the editors of the website will be translating it into Chinese for publication in the Lafrontiers ISSN No. 2096-336X. ",
     "Please use the link below to open the article:",
     "<a href='https://land8.com/10-ways-to-increase-biodiversity-in-any-design' target='blank'>10 ways to increase biodiversity in any design</a>",
+    "<a href='https://land8.com/is-biodiversity-in-cities-important/' target='blank'>Is Biodiversity in Cities Important?</a>",
   ],
 };
