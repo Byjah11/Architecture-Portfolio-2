@@ -111,21 +111,23 @@ const ProjectBanner = ({ p, btn }) => {
           )}
           <Wrapper>
             <div>
-              <Title>
-                {p.title.split("").map((l, i) => (
-                  <motion.span
-                    initial={{ opacity: 0, y: -100 }}
-                    whileInView={{ y: 0, opacity: 1 }}
-                    viewport={{ once: true }}
-                    transition={{
-                      ease: "easeOut",
-                      duration: 1,
-                      delay: i * 0.1,
-                    }}
-                    key={i}
-                  >{`${l}`}</motion.span>
-                ))}
-              </Title>
+              {p.title && (
+                <Title>
+                  {p.title.split("").map((l, i) => (
+                    <motion.span
+                      initial={{ opacity: 0, y: -100 }}
+                      whileInView={{ y: 0, opacity: 1 }}
+                      viewport={{ once: true }}
+                      transition={{
+                        ease: "easeOut",
+                        duration: 1,
+                        delay: i * 0.1,
+                      }}
+                      key={i}
+                    >{`${l}`}</motion.span>
+                  ))}
+                </Title>
+              )}
               <Subtitle>
                 <motion.div
                   initial={{ opacity: 0, scaleX: 1.2 }}
@@ -140,24 +142,26 @@ const ProjectBanner = ({ p, btn }) => {
                 </motion.div>
               </Subtitle>
             </div>
-            <Details>
-              {Object.entries(p.details).map(([key, value], i) => (
-                <Entry
-                  initial={{ opacity: 0 }}
-                  whileInView={{ opacity: 1 }}
-                  viewport={{ once: true }}
-                  transition={{
-                    ease: "easeOut",
-                    duration: 1,
-                    delay: i * 0.3,
-                  }}
-                  key={key}
-                >
-                  <Key>{key}</Key>
-                  <Value>{value}</Value>
-                </Entry>
-              ))}
-            </Details>
+            {p.details && (
+              <Details>
+                {Object.entries(p.details).map(([key, value], i) => (
+                  <Entry
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    viewport={{ once: true }}
+                    transition={{
+                      ease: "easeOut",
+                      duration: 1,
+                      delay: i * 0.3,
+                    }}
+                    key={key}
+                  >
+                    <Key>{key}</Key>
+                    <Value>{value}</Value>
+                  </Entry>
+                ))}
+              </Details>
+            )}
           </Wrapper>
         </Container>
         <div id="scroll" />

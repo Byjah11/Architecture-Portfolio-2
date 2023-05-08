@@ -215,7 +215,7 @@ const Computational = () => {
         </Bottom>
       </Section>
       <ProjectBanner p={c2} />
-      <Section2>
+      {/* <Section2>
         <Left>
           <ImageC2>
             <img src={`/assets/imgs/${c2.panel.img}`} alt="panel" />
@@ -241,7 +241,7 @@ const Computational = () => {
             <span>Lichens-inspired tile scripted in Grasshopper, Kangaroo</span>
           </RImg>
         </Right>
-      </Section2>
+      </Section2> */}
     </Container>
   );
 };

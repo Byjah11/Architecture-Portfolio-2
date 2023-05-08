@@ -26,13 +26,13 @@ export const c1 = {
 };
 export const c2 = {
   id: 2,
-  title: "OTHER",
-  subtitle: "COMPUTATIONAL DESIGN",
-  details: {
-    type: "academic project",
-    date: "2021-2022",
-    "co-authors": "other class attendees",
-  },
+  // title: "OTHER",
+  subtitle: "For more computational projects contact me by email.",
+  // details: {
+  //   type: "academic project",
+  //   date: "2021-2022",
+  //   "co-authors": "other class attendees",
+  // },
   desc: [
     "<b>Computational design</b>",
     "Simultaneously, I have got the chance to attend Digital Fabrication and Computational Design courses. We have designed a range of models and scripts including an organic lichens-inspired tile, optimization scripts and small acoustic panels.",
